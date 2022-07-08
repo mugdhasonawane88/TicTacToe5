@@ -4,8 +4,11 @@ import { Constants, Position } from '../constants/TestConstants';
 
 describe('TicTacToe component', () => {
 
-  test('should have title', () => {
+  beforeEach(() => {
     render(<TicTacToe />);
+  });
+
+  test('should have title', () => {
 
     const headerElement = screen.getByTestId('header');
 
@@ -14,7 +17,6 @@ describe('TicTacToe component', () => {
   });
 
   test('Should create empty nine squares in the board when game starts', () => {
-    render(<TicTacToe />);
 
     const squares = screen.queryAllByTestId('square');
 
@@ -25,7 +27,6 @@ describe('TicTacToe component', () => {
   });
 
   test('Should display X in square when player one clicks on a square', () => {
-    render(<TicTacToe />);
 
     const squares = screen.queryAllByTestId('square');
 
